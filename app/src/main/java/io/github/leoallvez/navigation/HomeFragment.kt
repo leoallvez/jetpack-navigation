@@ -8,13 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.fragment_home.*
 
-class HomeFragment : Fragment() {
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+class HomeFragment: Fragment() {
+    override fun onCreateView(inflater: LayoutInflater,
+                              container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_home, container, true)
     }
 
@@ -22,8 +19,8 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         btnGo.setOnClickListener {
             val args = Bundle().apply {
-                putString("full_name", "Leonardo")
-                putInt("age", 38)
+                putString("full_name", "Nelson Glauber")
+                putInt("age", 34)
             }
             Navigation.findNavController(requireActivity(), R.id.navHostFragment)
                     .navigate(R.id.action_homeFragment_to_completeFragment, args)
